@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Financeiro Casal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div id="loginPage">
+
+    <div class="login-card">
+
+        <h1>💰 Financeiro Casal</h1>
+
+        <p>Entre para acessar suas finanças</p>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+        >
+
+        <input
+            type="password"
+            id="senha"
+            placeholder="Senha"
+        >
+
+        <button id="btnLogin">
+            Entrar
+        </button>
+
+    </div>
+
+</div>
+
+<div
+    id="app"
+    class="hidden"
+>
+
+<header>
+
+    <div class="logo">
+        💰 Financeiro Casal
+    </div>
+
+    <button id="btnLogout">
+        Sair
+    </button>
+
+</header>
+
+<section class="dashboard">
+
+    <div class="card">
+        <span>Receitas</span>
+        <h2 id="receitas">
+            R$ 0,00
+        </h2>
+    </div>
+
+    <div class="card">
+        <span>Despesas</span>
+        <h2 id="despesas">
+            R$ 0,00
+        </h2>
+    </div>
+
+    <div class="card">
+        <span>Saldo</span>
+        <h2 id="saldo">
+            R$ 0,00
+        </h2>
+    </div>
+
+    <div class="card">
+        <span>Lançamentos</span>
+        <h2 id="qtd">
+            0
+        </h2>
+    </div>
+
+</section>
+
+<section class="form-card">
+
+    <h3>Novo Lançamento</h3>
+
+    <input
+        type="date"
+        id="data"
+    >
+
+    <input
+        id="descricao"
+        placeholder="Descrição"
+    >
+
+    <input
+        type="number"
+        id="valor"
+        placeholder="Valor"
+    >
+
+    <select id="tipo">
+        <option>Receita</option>
+        <option>Despesa</option>
+    </select>
+
+    <select id="categoria">
+
+        <option>Salário</option>
+        <option>Hora Extra</option>
+        <option>Freelance</option>
+        <option>Investimentos</option>
+
+        <option>Alimentação</option>
+        <option>Mercado</option>
+        <option>Transporte</option>
+        <option>Combustível</option>
+        <option>Moradia</option>
+        <option>Saúde</option>
+        <option>Lazer</option>
+        <option>Pet</option>
+        <option>Assinaturas</option>
+        <option>Outros</option>
+
+    </select>
+
+    <select id="responsavel">
+        <option>Kauan</option>
+        <option>Erica</option>
+        <option>Ambos</option>
+    </select>
+
+    <button id="btnSalvar">
+        Salvar
+    </button>
+
+</section>
+
+<section class="filtros">
+
+    <input
+        id="pesquisa"
+        placeholder="Pesquisar..."
+    >
+
+    <select id="filtroPessoa">
+        <option value="">
+            Todos
+        </option>
+        <option>Kauan</option>
+        <option>Erica</option>
+        <option>Ambos</option>
+    </select>
+
+</section>
+
+<section>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>Data</th>
+
+            <th>Descrição</th>
+
+            <th>Categoria</th>
+
+            <th>Tipo</th>
+
+            <th>Responsável</th>
+
+            <th>Valor</th>
+
+            <th>Ações</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="tbody"></tbody>
+
+    </table>
+
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

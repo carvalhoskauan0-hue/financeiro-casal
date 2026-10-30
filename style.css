@@ -1,0 +1,253 @@
+:root{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --card-hover:#243447;
+    --border:#334155;
+    --blue:#3b82f6;
+    --green:#10b981;
+    --red:#ef4444;
+    --text:#f8fafc;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Segoe UI,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* LOGIN */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.login-card{
+    width:100%;
+    max-width:420px;
+    background:var(--card);
+    padding:35px;
+    border-radius:24px;
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+.login-card h1{
+    margin-bottom:10px;
+}
+
+.login-card p{
+    opacity:.7;
+    margin-bottom:25px;
+}
+
+/* APP */
+
+.hidden{
+    display:none;
+}
+
+header{
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#111827;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+}
+
+input,
+select{
+    width:100%;
+    background:#111827;
+    border:1px solid var(--border);
+    color:white;
+    border-radius:12px;
+    padding:14px;
+    outline:none;
+}
+
+button{
+    border:none;
+    border-radius:12px;
+    padding:14px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+#btnLogin,
+#btnSalvar{
+    background:var(--blue);
+    color:white;
+    width:100%;
+}
+
+#btnLogout{
+    background:var(--red);
+    color:white;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    display:grid;
+    gap:15px;
+    padding:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.card{
+    background:var(--card);
+    border-radius:20px;
+    padding:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    background:var(--card-hover);
+}
+
+.card span{
+    opacity:.8;
+}
+
+.card h2{
+    margin-top:12px;
+    font-size:32px;
+}
+
+#receitas{
+    color:var(--green);
+}
+
+#despesas{
+    color:var(--red);
+}
+
+#saldo{
+    color:var(--blue);
+}
+
+/* FORM */
+
+.form-card{
+    background:var(--card);
+    margin:20px;
+    padding:20px;
+    border-radius:20px;
+
+    display:grid;
+    gap:12px;
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+}
+
+.form-card h3{
+    grid-column:1/-1;
+}
+
+/* FILTROS */
+
+.filtros{
+    display:grid;
+    gap:12px;
+    padding:20px;
+    grid-template-columns:
+        2fr
+        1fr;
+}
+
+/* TABELA */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+thead{
+    background:#111827;
+}
+
+th{
+    padding:16px;
+    text-align:left;
+}
+
+td{
+    padding:16px;
+    border-bottom:1px solid var(--border);
+}
+
+tbody tr:hover{
+    background:#1a2538;
+}
+
+.btn-edit{
+    background:var(--blue);
+    color:white;
+}
+
+.btn-delete{
+    background:var(--red);
+    color:white;
+}
+
+/* BADGES */
+
+.receita{
+    color:var(--green);
+    font-weight:700;
+}
+
+.despesa{
+    color:var(--red);
+    font-weight:700;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .form-card{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .filtros{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
